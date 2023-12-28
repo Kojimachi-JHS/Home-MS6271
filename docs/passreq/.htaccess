@@ -1,10 +1,4 @@
-<Files ~ "^\.(htaccess|htpasswd)$">
-deny from all
-</Files>
-Options -Indexes
-AuthUserFile docs\passreq\.htpasswd
-AuthGroupFile /dev/null
-AuthName "Please enter your ID and password"
+AuthUserFile \docs\passreq\.htpasswd
+AuthName "ログイン情報を入力してください。"
 AuthType Basic
 require valid-user 
-order deny,allow
