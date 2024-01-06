@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> This is unique title! </title>
+    <link rel="stylesheet" href="style.css">
+	</head>
+    <header>
+        <h1> 千代田区立麹町中学校 プログラミング部 パスワード保護</h1>
+    </header>
+ 	<main>
+        <div>
+        <form id="form">
+            <p id="message">部員専用ページはパスワード保護されています。</p>
+            <input type="password" placeholder="password" id="password">
+            <input type="submit" value="アクセス">
+        </form>
+        <script>
+            function hash(text) {
+                const sha = new jsSHA('SHA-256', 'TEXT');
+                sha.update(text);
+                return sha.getHash('HEX');
+            }
+            function auth(password) {
+                const url = hash(password);
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', url);
+                xhr.send();
+                xhr.onload = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    window.location = url;
+                } else {
+                    const message = document.getElementById('message');
+                    const input = document.getElementById('password');
+                    message.innerHTML = 'Wrong password! Try again.';
+                    input.value = '';
+                }
+                };
+                xhr.onerror = function () {
+                const message = document.getElementById('message');
+                message.innerHTML = 'Sorry, ERROR !';
+                };
+            }
+            const form = document.getElementById('form');
+            form.addEventListener('submit', function (event) {
+                const password = document.getElementById('password').value;
+                auth(password);
+                event.preventDefault();
+            });
+        </script>
+        </div>
+    </main>
+</html>
