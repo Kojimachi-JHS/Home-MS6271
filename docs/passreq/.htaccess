@@ -1,4 +1,0 @@
-AuthUserFile \docs\passreq\.htpasswd
-AuthName "ログイン情報を入力してください。"
-AuthType Basic
-require valid-user 
