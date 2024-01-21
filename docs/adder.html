@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>TOTP認証</title>
+</head>
+<body>
+  <h1>TOTP認証</h1>
+  <input type="text" id="code" placeholder="TOTPコード">
+  <button type="button" id="submit">認証</button>
+
+  <script>
+    const secret = "";
+    const code = document.getElementById("code").value;
+
+    const totp = new TOTP(secret);
+
+    const submitButton = document.getElementById("submit");
+    submitButton.addEventListener("click", () => {
+      const now = Date.now();
+      const token = totp.generate(now);
+
+      if (token === code) {
+        window.location.href = "https://example.com";
+      } else {
+        alert("TOTPコードが正しくありません。");
+      }
+    });
+  </script>
+</body>
+</html>
