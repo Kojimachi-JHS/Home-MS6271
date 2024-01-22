@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>TOTP認証</title>
-</head>
-<body>
-  <h1>TOTP認証</h1>
-  <input type="text" id="code" placeholder="TOTPコード">
-  <button type="button" id="submit">認証</button>
+  <head>
+    <meta charset="UTF-8">
+    <title>TOTP認証</title>
+  </head>
+  <main>
+    <h1>TOTP認証</h1>
+    <input type="text" id="code" placeholder="TOTPコード">
+    <button type="button" id="submit">認証</button>
 
-  <script>
-    const secret = "";
-    const code = document.getElementById("code").value;
+    <script>
+      const code = document.querySelector("input[name='code']").value;
+      const secret = "lshgq3xldoel2purp4d2srgb3txarfh2jlyp7u4yzvljm6fbgyem5jja";
+      const interval = 30;
 
-    const totp = new TOTP(secret);
+      const generateCode = () => {
+        const time = Math.floor(new Date().getTime() / interval);
+        return sha256(secret + time).slice(-8);
+      };
 
-    const submitButton = document.getElementById("submit");
-    submitButton.addEventListener("click", () => {
-      const now = Date.now();
-      const token = totp.generate(now);
+      const checkCode = (code) => {
+        return code === generateCode();
+      };
 
-      if (token === code) {
-        window.location.href = "https://example.com";
-      } else {
-        alert("TOTPコードが正しくありません。");
-      }
-    });
-  </script>
-</body>
+      document.querySelector("input[type='submit']").addEventListener("click", () => {
+        if (checkCode(code)) {
+          window.location.href = "\\5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8\\index.html";
+        } else {
+          alert("TOTPコードが正しくありません。");
+        }
+      });
+
+    </script>
+  </main>
 </html>
