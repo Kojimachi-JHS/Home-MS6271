@@ -11,17 +11,8 @@
 
     <script>
       const code = document.querySelector("input[name='code']").value;
-      const secret = "lshgq3xldoel2purp4d2srgb3txarfh2jlyp7u4yzvljm6fbgyem5jja";
+      const secret = "YOUR_SECRET_KEY";
       const interval = 30;
-
-      async function sha256(message) {
-        const encoder = new TextEncoder();
-        const data = encoder.encode(message);
-        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-        return hashHex;
-      }
 
       const generateCode = () => {
         const time = Math.floor(new Date().getTime() / interval);
@@ -34,12 +25,11 @@
 
       document.querySelector("input[type='submit']").addEventListener("click", () => {
         if (checkCode(code)) {
-          window.location.href = "\\5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8\\index.html";
+          window.location.href = "/destination";
         } else {
           alert("TOTPコードが正しくありません。");
         }
       });
-
     </script>
   </main>
 </html>
