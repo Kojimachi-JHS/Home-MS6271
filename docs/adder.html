@@ -14,6 +14,15 @@
       const secret = "lshgq3xldoel2purp4d2srgb3txarfh2jlyp7u4yzvljm6fbgyem5jja";
       const interval = 30;
 
+      async function sha256(message) {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(message);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+        return hashHex;
+      }
+
       const generateCode = () => {
         const time = Math.floor(new Date().getTime() / interval);
         return sha256(secret + time).slice(-8);
