@@ -11,7 +11,7 @@
 
     <script>
       const code = document.querySelector("input[name='code']").value;
-      const secret = "YOUR_SECRET_KEY";
+      const secret = "ff33cdd7388c018190e339797422570a72d5ec7a9f886aa90d43efc5790c266a3ccee0ae250c1c426c460bd0b5239d32caf3e3257fb207a4878135883f826c68";
       const interval = 30;
 
       const generateCode = () => {
@@ -24,7 +24,7 @@
       };
 
       document.querySelector("input[type='submit']").addEventListener("click", () => {
-        if (checkCode(code)) {
+        if (checkCode(document.querySelector("input[name='code']").value)) {
           window.location.href = "/destination";
         } else {
           alert("TOTPコードが正しくありません。");
