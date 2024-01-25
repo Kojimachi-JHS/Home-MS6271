@@ -24,7 +24,7 @@
       };
 
       document.querySelector("input[type='submit']").addEventListener("click", () => {
-        if (checkCode(document.querySelector("input[name='code']").value)) {
+        if (checkCode(document.querySelector("input[name='code']"))) {
           window.location.href = "/destination";
         } else {
           alert("TOTPコードが正しくありません。");
