@@ -6,8 +6,11 @@
   </head>
   <main>
     <h1>TOTP認証</h1>
-    <input type="text" id="code" placeholder="TOTPコード">
-    <input type="submit" id="submit" name="認証">
+    <form> 
+      <label for="frame"> TOTPコード:  </label>
+      <input type="code" name="code" id="code"><br>
+      <input type="submit" id="done" name="完了"> <input type="reset" id="reset" name="リセット">
+  </form>
 
     <script>
       const code = document.querySelector("input[name='code']").value;
@@ -25,7 +28,7 @@
 
       document.querySelector("input[type='submit']").addEventListener("click", () => {
         if (checkCode(document.querySelector("input[name='code']"))) {
-          window.location.href = "/destination";
+          window.location.href = "google.com";
         } else {
           alert("TOTPコードが正しくありません。");
         }
