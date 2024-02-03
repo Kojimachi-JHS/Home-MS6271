@@ -6,12 +6,15 @@
   </head>
   <main>
     <h1>TOTP認証</h1>
-    <input type="text" id="code" placeholder="TOTPコード">
-    <button type="button" id="submit">認証</button>
+    <form> 
+      <label for="frame"> TOTPコード:  </label>
+      <input type="code" name="code" id="code"><br>
+      <input type="submit" id="done" name="完了"> <input type="reset" id="reset" name="リセット">
+  </form>
 
     <script>
       const code = document.querySelector("input[name='code']").value;
-      const secret = "lshgq3xldoel2purp4d2srgb3txarfh2jlyp7u4yzvljm6fbgyem5jja";
+      const secret = "ff33cdd7388c018190e339797422570a72d5ec7a9f886aa90d43efc5790c266a3ccee0ae250c1c426c460bd0b5239d32caf3e3257fb207a4878135883f826c68";
       const interval = 30;
 
       const generateCode = () => {
@@ -24,13 +27,12 @@
       };
 
       document.querySelector("input[type='submit']").addEventListener("click", () => {
-        if (checkCode(code)) {
-          window.location.href = "\\5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8\\index.html";
+        if (checkCode(document.querySelector("input[name='code']"))) {
+          window.location.href = "google.com";
         } else {
           alert("TOTPコードが正しくありません。");
         }
       });
-
     </script>
   </main>
 </html>
