@@ -7,6 +7,11 @@
 [Class] -> クラス
 [Username] -> KJHS-PC Developer's Pageのユーザー名
 [GitHub Pages] -> GitHubのユーザー名
-4: この作業を必要分行います。
-5: すべてをステージし、コミットします。その後同期してください。
-5: このファイルを削除してください。
+4: sw.jsのURLSに以下の内容を登録します。
+・`${GHPATH}/ff360b79ed14b1f35bcbf21ef854b650cf7660adfeba8176cbb817fea20e782b/`
+・`${GHPATH}/ff360b79ed14b1f35bcbf21ef854b650cf7660adfeba8176cbb817fea20e782b/index.html`
+・`${GHPATH}/ff360b79ed14b1f35bcbf21ef854b650cf7660adfeba8176cbb817fea20e782b/login.html`
+5: この作業を必要分行います。
+6: すべてをステージし、コミットします。その後同期してください。
+7: sw.jsのバージョン番号を1つ繰り上げます
+8: このファイルを削除してください。

@@ -8,7 +8,7 @@
         "type": "image/png"
       }
     ],
-    "start_url": "/Home-MS6271/",
+    "start_url": "/Home-MS6271/locked/",
     "display": "standalone",
     "theme_color": "#333"
   }
