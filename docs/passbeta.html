@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>KJHS-PC</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="sha256.js"></script>
-	</head>
+    <head>
+        <title>KJHS-PC Developer ログイン</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="sha256.js"></script>
+    </head>
     <header>
         <h1>KJHS-PC Developer ログイン</h1>
     </header>
- 	<main>
+    <main>
         <div>
             <form id="form">
                 <p id="message">アカウント名とパスワードを入力してください...</p>
-                <input type="text" placeholder="Username" id="account">
+                <input type="text" placeholder="Account Name" id="account">
                 <input type="password" placeholder="Password" id="password">
                 <input type="submit" value="アクセス">
             </form>
             <script>
                 function hash(text) {
-                  const sha = new jsSHA('SHA-256', 'TEXT');
-                  sha.update(text);
-                  return sha.getHash('HEX');
+                    const sha = new jsSHA('SHA-256', 'TEXT');
+                    sha.update(text);
+                    return sha.getHash('HEX');
                 }
-                function auth(password) {
-                    const url = hash(password);
+                function auth(account, password) {
+                    const url = hash(account + password);
                     const xhr = new XMLHttpRequest();
                     xhr.open('GET', url);
                     xhr.send();
@@ -32,9 +32,11 @@
                             window.location = url;
                         } else {
                             const message = document.getElementById('message');
-                            const input = document.getElementById('password');
-                            message.innerHTML = 'アカウントが読み込めませんでした。';
-                            input.value = '';
+                            const accountInput = document.getElementById('account');
+                            const passwordInput = document.getElementById('password');
+                            message.innerHTML = 'アカウントまたはパスワードが間違っています。';
+                            accountInput.value = '';
+                            passwordInput.value = '';
                         }
                     };
                     xhr.onerror = function () {
@@ -44,11 +46,13 @@
                 }
                 const form = document.getElementById('form');
                     form.addEventListener('submit', function (event) {
+                    const account = document.getElementById('account').value;
                     const password = document.getElementById('password').value;
-                    auth(password);
+                    auth(account, password);
                     event.preventDefault();
                 });
             </script>
         </div>
     </main>
 </html>
+

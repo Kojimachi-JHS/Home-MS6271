@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>KJHS-PC</title>
+		<title>KJHS-PC Developer ログイン</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="sha256.js"></script>
 	</head>
@@ -12,7 +12,7 @@
         <div>
             <form id="form">
                 <p id="message">アカウント名とパスワードを入力してください...</p>
-                <input type="text" placeholder="Username" id="account">
+                <input type="text" placeholder="Account Name" id="account">
                 <input type="password" placeholder="Password" id="password">
                 <input type="submit" value="アクセス">
             </form>
@@ -22,8 +22,8 @@
                   sha.update(text);
                   return sha.getHash('HEX');
                 }
-                function auth(password) {
-                    const url = hash(password);
+                function auth(userdata) {
+                    const url = hash(userdata);
                     const xhr = new XMLHttpRequest();
                     xhr.open('GET', url);
                     xhr.send();
@@ -44,8 +44,9 @@
                 }
                 const form = document.getElementById('form');
                     form.addEventListener('submit', function (event) {
+                    const account = document.getElementById('account').value;
                     const password = document.getElementById('password').value;
-                    auth(password);
+                    auth(account + password);
                     event.preventDefault();
                 });
             </script>
