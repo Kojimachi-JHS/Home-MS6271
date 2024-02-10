@@ -1,0 +1,15 @@
+{
+    "short_name": "KJHS-PC HP",
+    "name": "KJHS-PC ホームページ",
+    "icons": [
+      {
+        "src": "/Home-MS6271/favicon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/Home-MS6271/",
+    "display": "standalone",
+    "theme_color": "#333"
+  }
+  
