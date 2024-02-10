@@ -65,14 +65,14 @@ input[type="password"] {
 input[type="text"]:focus,
 input[type="password"]:focus {
   outline: none;
-  border-color: #49a56f;
+  border-color: #333;
 }
 
 /* ログインボタンのスタイル */
 input[type="submit"] {
   width: 150px;
   padding: 10px;
-  background-color: #49a56f;
+  background-color: #333;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -82,7 +82,7 @@ input[type="submit"] {
 
 /* ログインボタンにマウスが乗った時のスタイル */
 input[type="submit"]:hover {
-  background-color: #306d4a;
+  background-color: #3c3c3c;
 }
 
 
