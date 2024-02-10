@@ -30,3 +30,17 @@ form {
     color: red;
     font-weight: bold;
 }
+
+a {
+    text-decoration: none; /* 下線を取り除く */
+    color: #333; /* テキストカラー */
+    font-weight: bold; /* 太字にする */
+  
+    /* ホバー時のスタイル */
+    &:hover {
+      color: #000; /* テキストカラーを変える */
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* 影をつける */
+    }
+  }
+
+  
