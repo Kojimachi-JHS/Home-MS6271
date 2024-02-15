@@ -11,6 +11,8 @@ header {
     color: #fff;
     padding: 20px;
     text-align: center;
+    position: fixed;
+    bottom: 0;    
 }
 
 footer {
@@ -18,6 +20,8 @@ footer {
     color: #fff;
     padding: 20px;
     text-align: center;
+    position: fixed;
+    top: 0; 
 }
 
 h1 {
@@ -42,49 +46,49 @@ a {
     text-decoration: none; /* 下線を取り除く */
     color: #49a56f; /* テキストカラー */
     font-weight: bold; /* 太字にする */
-}  
+}    
 
 /* ホバー時のスタイル */
 a:hover {
-      color: #306d4a; /* テキストカラーを変える */
-      text-shadow: 0 0 5px rgba(48, 109, 74, 0.2); /* 影をつける */
+    color: #306d4a; /* テキストカラーを変える */
+    text-shadow: 0 0 5px rgba(48, 109, 74, 0.2); /* 影をつける */
 }
 
 
 /* 入力欄のスタイル */
 input[type="text"],
 input[type="password"] {
-  width: 300px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  font-size: 16px;
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
 }
 
 /* 入力欄にフォーカスした時のスタイル */
 input[type="text"]:focus,
 input[type="password"]:focus {
-  outline: none;
-  border-color: #333;
+    outline: none;
+    border-color: #333;
 }
 
 /* ログインボタンのスタイル */
 input[type="submit"] {
-  width: 150px;
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
+    width: 150px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 /* ログインボタンにマウスが乗った時のスタイル */
 input[type="submit"]:hover {
-  background-color: #3c3c3c;
+    background-color: #3c3c3c;
 }
 
 
-  
+    
