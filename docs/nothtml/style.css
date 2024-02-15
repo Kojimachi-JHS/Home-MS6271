@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+    position: relative;
 }
 
 header {
@@ -18,6 +19,11 @@ footer {
     color: #fff;
     padding: 20px;
     text-align: center;
+    width: max-content;
+    position: absolute;
+    left: auto;
+    bottom: 0%;
+    transform: translate(-50%,-50%);
 }
 
 h1 {
@@ -42,13 +48,14 @@ a {
     text-decoration: none; /* 下線を取り除く */
     color: #49a56f; /* テキストカラー */
     font-weight: bold; /* 太字にする */
+}
   
     /* ホバー時のスタイル */
-    &:hover {
-      color: #306d4a; /* テキストカラーを変える */
-      text-shadow: 0 0 5px rgba(48, 109, 74, 0.2); /* 影をつける */
-    }
-  }
+a:hover {
+  color: #306d4a; /* テキストカラーを変える */
+    text-shadow: 0 0 5px rgba(48, 109, 74, 0.2); /* 影をつける */
+}
+
 
 /* 入力欄のスタイル */
 input[type="text"],
