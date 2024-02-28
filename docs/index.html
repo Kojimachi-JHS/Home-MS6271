@@ -12,6 +12,12 @@
         <h1>KJHS-PC</h1>
     </header>
     <main>
+        <script>
+            if (typeof navigator.serviceWorker !== 'undefined') {
+                navigator.serviceWorker.register('sw.js')
+            }
+        </script>
+
         <h1>KJHS-PCって?</h1>
         <p>千代田区立麹町中学校 P部の略称です。<br>
             <b><u>K</u></b>ojimachi <b><u>J</u></b>unior <b><u>H</u></b>igh <b><u>S</u></b>chool <b><u>P</u></b>rogramming <b><u>C</u></b>lub</p>
