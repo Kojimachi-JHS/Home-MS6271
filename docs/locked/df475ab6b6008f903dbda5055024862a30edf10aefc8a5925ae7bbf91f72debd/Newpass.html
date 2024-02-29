@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Set Password</title>
-        <link rel="stylesheet" href="/Home-MS6271/nothtml/style.css">
+        <link rel="stylesheet" href="login-v2.css">
         <link rel="icon" href="/Home-MS6271/nothtml/favicon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="canonical" href="https://Kojimachi-JHS.github.io/Home-MS6271/" />
@@ -11,32 +11,38 @@
         <script type="text/javascript" src="sha256.js"></script>
     </head>
     <header>
-        <h1>KJHS-PC</h1>
+        <h1>KJHS-PC ID Generator</h1>
     </header>
-    <body>
-        <form id="form">
-            <p id="message">設定するアカウント名とパスワードを入力してください...</p>
-            <input type="text" placeholder="Username" id="account">
-            <input type="password" placeholder="Password" id="password">
-            <input type="submit" value="Login">
-            <p id="result" style="text-align: left; font-family: 'Roboto Mono'; font-size: 20.5px;">Hashed: </p>
-        </form>
-        <script>
-            function hash(text) {
-                const sha = new jsSHA('SHA-256', 'TEXT');
-                sha.update(text);
-                return sha.getHash('HEX');
-            }
-            const form = document.getElementById('form');
-            form.addEventListener('submit', function (event) {
-                const account = document.getElementById('account').value;
-                const password = document.getElementById('password').value;
-                const result = document.getElementById('result');
-                result.innerHTML = 'Hashed: ' + hash(account + password);
-                event.preventDefault();
-            });
-        </script>
-    </body>
+    <main>
+        <div>
+            <form id="form" class="login-form">
+                <p id="ms">アカウント名とパスワードを入力してください...</p>
+                <input type="text" placeholder="Username" id="account">
+                <input type="password" placeholder="Password" id="password">
+                <p id="message"></p>
+                <input type="submit" value="Generate your ID" class="login-button">
+                <p id="result" style="text-align: left; font-family: 'Roboto Mono';"></p>
+                <p id="mesformaker" style="text-align: left; font-family: 'Roboto Mono';">次の手順: IDを作成する。</p>
+            </form>
+            <script>
+                function hash(text) {
+                    const sha = new jsSHA('SHA-256', 'TEXT');
+                    sha.update(text);
+                    return sha.getHash('HEX');
+                }
+                const form = document.getElementById('form');
+                form.addEventListener('submit', function (event) {
+                    const account = document.getElementById('account').value;
+                    const password = document.getElementById('password').value;
+                    const result = document.getElementById('result');
+                    result.innerHTML = 'あなたのID: ' + hash(account + password);
+                    const messageformaker = document.getElementById('mesformaker').value;
+                    messageformaker.innerHTML = '次の手順: このIDをディレクトリ名に設定する。' 
+                    event.preventDefault();
+                });
+            </script>
+        </div>
+    </main>
     <footer>
         <p>ようこそ、<b>Admin</b>さん</p>
         <div id="menu">

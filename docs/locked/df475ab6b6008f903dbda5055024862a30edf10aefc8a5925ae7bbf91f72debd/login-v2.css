@@ -1,0 +1,103 @@
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply theme color */
+body {
+    background-color: #fff;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Main styles */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color:seashell;
+}
+
+/* Form container styles */
+div {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input styles */
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+/* Submit button styles */
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    /* Add hover effect */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+  
+input[type="submit"]:hover {
+    background-color: #444; /* Change background color on hover */
+}
+
+@keyframes login-form-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+  
+.login-form {
+    animation: login-form-fade-in 0.5s ease-in-out;
+}
+
+@keyframes login-button-shadow {
+    from {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+    }
+    to {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+}
+  
+.login-button {
+    animation: login-button-shadow 0.3s ease-in-out infinite alternate;
+}
+   
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>KJHS-PC Developer ログイン</title>
-        <link rel="stylesheet" href="/Home-MS6271/nothtml/style.css">
+        <link rel="stylesheet" href="login-v2.css">
         <link rel="icon" href="/Home-MS6271/nothtml/favicon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="canonical" href="https://Kojimachi-JHS.github.io/Home-MS6271/" />
@@ -14,11 +14,12 @@
     </header>
  	<main>
         <div>
-            <form id="form">
-                <p id="message">アカウント名とパスワードを入力してください...</p>
-                <input type="text" placeholder="Username" id="account"><br>
-                <input type="password" placeholder="Password" id="password"><br>
-                <input type="submit" value="Login">
+            <form id="form" class="login-form">
+                <p id="ms">アカウント名とパスワードを入力してください...</p>
+                <input type="text" placeholder="Username" id="account">
+                <input type="password" placeholder="Password" id="password">
+                <p id="message"></p>
+                <input type="submit" value="Login" class="login-button">
             </form>
             <script>
                 function hash(text) {
