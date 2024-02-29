@@ -88,3 +88,6 @@ input[type="submit"]:hover {
 
 
     
+img {
+    max-width: 100%;
+  }
