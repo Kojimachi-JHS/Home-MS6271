@@ -29,7 +29,7 @@ main {
 }
 
 /* Form container styles */
-div {
+.form {
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 20px;
@@ -101,3 +101,10 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+a {
+    text-decoration: none; /* 下線を取り除く */
+    color: #49a56f; /* テキストカラー */
+    font-weight: bold; /* 太字にする */
+}    
+
